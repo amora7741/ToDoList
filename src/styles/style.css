@@ -5,6 +5,9 @@
 	--blue-700: #1d4ed8;
 	--rounded-corners: 10px;
 	--gray-300: #d1d5db;
+	--card-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	--button-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+		rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
 * {
@@ -21,17 +24,49 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	padding: 30px;
+	gap: 30px;
 }
 
 header {
-	display: flex;
-	flex-direction: column;
 	align-items: center;
 	background-color: var(--blue-400);
-	padding: 15px;
-	border-radius: var(--rounded-corners);
 	color: white;
 	font-size: 3rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--rounded-corners);
 	gap: 15px;
+	box-shadow: var(--card-shadow);
+	min-width: 40vw;
+	padding: 30px;
+}
+
+main {
+	background-color: white;
+	color: black;
+	font-size: 1.5rem;
+}
+
+.topheader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+}
+
+#addtask {
+	padding: 15px 30px;
+	border: none;
+	border-radius: var(--rounded-corners);
+	background-color: var(--blue-400);
+	color: white;
+	font-weight: bold;
+	box-shadow: var(--button-shadow);
+	font-size: 1.5rem;
+	cursor: pointer;
 }
