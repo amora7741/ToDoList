@@ -13,6 +13,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
@@ -34,6 +35,7 @@ header {
 	background-color: var(--blue-400);
 	color: white;
 	font-size: 3rem;
+	padding: 30px;
 }
 
 .card {
@@ -43,13 +45,13 @@ header {
 	gap: 15px;
 	box-shadow: var(--card-shadow);
 	min-width: 40vw;
-	padding: 30px;
 }
 
 main {
 	background-color: white;
 	color: black;
 	font-size: 1.5rem;
+	padding: 45px;
 }
 
 .topheader {
@@ -69,4 +71,8 @@ main {
 	box-shadow: var(--button-shadow);
 	font-size: 1.5rem;
 	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
 }

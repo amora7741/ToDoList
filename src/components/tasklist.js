@@ -17,5 +17,19 @@ export default function renderTaskListCard() {
 
 	taskListCard.appendChild(topHeader);
 
+	const lineBreak = document.createElement("hr");
+	taskListCard.appendChild(lineBreak);
+
+	const taskList = document.createElement("ul");
+
+	for (let index = 0; index < 10; index++) {
+		const item = document.createElement("li");
+		item.textContent = `Task ${index}`;
+
+		taskList.appendChild(item);
+	}
+
+	taskListCard.appendChild(taskList);
+
 	return taskListCard;
 }
