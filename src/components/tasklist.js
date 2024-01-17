@@ -22,13 +22,6 @@ export default function renderTaskListCard() {
 
 	const taskList = document.createElement("ul");
 
-	for (let index = 0; index < 10; index++) {
-		const item = document.createElement("li");
-		item.textContent = `Task ${index}`;
-
-		taskList.appendChild(item);
-	}
-
 	taskListCard.appendChild(taskList);
 
 	return taskListCard;
