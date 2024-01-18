@@ -1,4 +1,4 @@
-export default function renderTaskListCard() {
+export default function renderTaskListCard(project) {
 	const taskListCard = document.createElement("main");
 	taskListCard.classList.add("card");
 
@@ -21,6 +21,12 @@ export default function renderTaskListCard() {
 	taskListCard.appendChild(lineBreak);
 
 	const taskList = document.createElement("ul");
+
+	project.getTodos().forEach((todo) => {
+		const li = document.createElement("li");
+		li.innerHTML = `${todo.title} - Due: ${todo.dueDate} - Priority: ${todo.priority}`;
+		taskList.appendChild(li);
+	});
 
 	taskListCard.appendChild(taskList);
 
