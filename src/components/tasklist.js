@@ -24,7 +24,34 @@ export default function renderTaskListCard(project) {
 
 	project.getTodos().forEach((todo) => {
 		const li = document.createElement("li");
-		li.innerHTML = `${todo.title} - Due: ${todo.dueDate} - Priority: ${todo.priority}`;
+		const topTask = document.createElement("div");
+		topTask.classList.add("toptask");
+		const text = document.createElement("h3");
+		text.textContent = `${todo.title} - Due: ${todo.dueDate} - Priority: ${todo.priority}`;
+
+		topTask.appendChild(text);
+
+		const arrow = document.createElement("button");
+		arrow.classList.add("button");
+		arrow.textContent = "V";
+
+		arrow.addEventListener("click", () => {
+			const description = document.createElement("p");
+			description.classList.add("todo-description");
+			description.textContent = todo.description;
+
+			const existingDescription = li.querySelector(".todo-description");
+
+			if (existingDescription) {
+				li.removeChild(existingDescription);
+			} else {
+				li.appendChild(description);
+			}
+		});
+
+		topTask.appendChild(arrow);
+		li.appendChild(topTask);
+
 		taskList.appendChild(li);
 	});
 

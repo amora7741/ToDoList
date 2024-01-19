@@ -44,7 +44,7 @@ header {
 	border-radius: var(--rounded-corners);
 	gap: 15px;
 	box-shadow: var(--card-shadow);
-	min-width: 40vw;
+	width: 50vw;
 }
 
 main {
@@ -61,7 +61,18 @@ main {
 	gap: 15px;
 }
 
-#addtask {
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: flex;
+	border-bottom: 1px dotted black;
+	padding: 15px 0px;
+	flex-direction: column;
+}
+
+button {
 	padding: 15px 30px;
 	border: none;
 	border-radius: var(--rounded-corners);
@@ -73,10 +84,18 @@ main {
 	cursor: pointer;
 }
 
-ul {
-	list-style-type: none;
-}
-
 button:hover {
 	background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+}
+
+.toptask {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	align-items: center;
+}
+
+.toptask h3,
+li p {
+	overflow: auto;
 }
