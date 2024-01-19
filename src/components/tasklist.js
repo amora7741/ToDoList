@@ -38,7 +38,7 @@ export default function renderTaskListCard(project) {
 		arrow.addEventListener("click", () => {
 			const description = document.createElement("p");
 			description.classList.add("todo-description");
-			description.textContent = `Description: ${todo.description}	`;
+			description.textContent = `Description: ${todo.description}`;
 
 			const existingDescription = li.querySelector(".todo-description");
 
