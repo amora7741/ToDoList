@@ -32,13 +32,13 @@ export default function renderTaskListCard(project) {
 		topTask.appendChild(text);
 
 		const arrow = document.createElement("button");
-		arrow.classList.add("button");
-		arrow.textContent = "V";
+		arrow.classList.add("expand");
+		arrow.textContent = "\u25BC";
 
 		arrow.addEventListener("click", () => {
 			const description = document.createElement("p");
 			description.classList.add("todo-description");
-			description.textContent = todo.description;
+			description.textContent = `Description: ${todo.description}`;
 
 			const existingDescription = li.querySelector(".todo-description");
 
