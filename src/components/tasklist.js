@@ -26,10 +26,28 @@ export default function renderTaskListCard(project) {
 		const li = document.createElement("li");
 		const topTask = document.createElement("div");
 		topTask.classList.add("toptask");
+
+		const container = document.createElement("div");
+		container.classList.add("checktask");
+
+		const checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.checked = todo.completed;
+
+		checkbox.addEventListener("click", () => {
+			todo.completed = checkbox.checked;
+
+			text.style.textDecoration = todo.completed ? "line-through" : "none";
+		});
+
+		container.appendChild(checkbox);
+
 		const text = document.createElement("h3");
 		text.textContent = `${todo.title} - Due: ${todo.dueDate} - Priority: ${todo.priority}`;
 
-		topTask.appendChild(text);
+		container.appendChild(text);
+
+		topTask.appendChild(container);
 
 		const arrow = document.createElement("button");
 		arrow.classList.add("expand");

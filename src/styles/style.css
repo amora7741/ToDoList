@@ -99,3 +99,9 @@ button:hover {
 li p {
 	overflow: auto;
 }
+
+.checktask {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
