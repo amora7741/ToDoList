@@ -115,3 +115,7 @@ li p {
 	background-color: rgb(255, 101, 101);
 	padding: 10px 20px;
 }
+
+#addtask {
+	font-size: 1.3rem;
+}
