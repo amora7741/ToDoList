@@ -19,6 +19,7 @@
 body {
 	font-family: "Agbalumo";
 	background-color: var(--gray-300);
+	padding: 30px;
 }
 
 .container {
@@ -26,7 +27,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 30px;
 	gap: 30px;
 }
 
@@ -44,14 +44,14 @@ header {
 	border-radius: var(--rounded-corners);
 	gap: 15px;
 	box-shadow: var(--card-shadow);
-	width: 50vw;
+	min-width: 50vw;
 }
 
 main {
 	background-color: white;
 	color: black;
 	font-size: 1.5rem;
-	padding: 45px;
+	padding: 30px;
 }
 
 .topheader {
@@ -104,4 +104,14 @@ li p {
 	display: flex;
 	gap: 10px;
 	align-items: center;
+}
+
+.task-buttoncontainer {
+	display: flex;
+	gap: 10px;
+}
+
+#removetask {
+	background-color: rgb(255, 101, 101);
+	padding: 10px 20px;
 }

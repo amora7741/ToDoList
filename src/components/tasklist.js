@@ -32,6 +32,9 @@ export default function createTaskList(project, saveDataCallback) {
 
 		topTask.appendChild(container);
 
+		const buttonContainer = document.createElement("div");
+		buttonContainer.classList.add("task-buttoncontainer");
+
 		const arrow = document.createElement("button");
 		arrow.classList.add("expand");
 		arrow.textContent = "\u25BC";
@@ -50,7 +53,23 @@ export default function createTaskList(project, saveDataCallback) {
 			}
 		});
 
-		topTask.appendChild(arrow);
+		buttonContainer.appendChild(arrow);
+
+		const removeButton = document.createElement("button");
+		removeButton.setAttribute("id", "removetask");
+		removeButton.textContent = "X";
+
+		removeButton.addEventListener("click", () => {
+			const index = project.getTodos().indexOf(todo);
+			project.getTodos().splice(index, 1);
+			li.remove();
+
+			saveDataCallback();
+		});
+
+		buttonContainer.appendChild(removeButton);
+
+		topTask.appendChild(buttonContainer);
 		li.appendChild(topTask);
 
 		taskList.appendChild(li);
