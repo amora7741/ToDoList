@@ -37,12 +37,12 @@ export default function renderMain(container) {
 	document.getElementById("addtask").addEventListener("click", () => {
 		const taskList = document.querySelector(".tasklist");
 
-		if (taskList) {
-			taskList.remove();
-		}
-
 		const title = prompt("Enter todo title:");
 		if (title) {
+			if (taskList) {
+				taskList.remove();
+			}
+
 			const description = prompt("Enter todo description:");
 			const dueDate = prompt("Enter due date (optional):");
 			const priority = prompt("Enter priority (Low/Medium/High):");
