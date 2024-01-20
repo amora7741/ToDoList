@@ -1,7 +1,8 @@
 import renderHeader from "../components/header.js";
-import renderTaskListCard from "../components/tasklist.js";
+import renderTaskListCard from "../components/tasklistcard.js";
 import Project from "../components/project.js";
 import Todo from "../components/todo.js";
+import createTaskList from "../components/tasklist.js";
 
 export default function renderMain(container) {
 	const projectsData = JSON.parse(localStorage.getItem("projects")) || [];
@@ -27,7 +28,15 @@ export default function renderMain(container) {
 	container.appendChild(renderHeader(currentProject));
 	container.appendChild(renderTaskListCard(currentProject));
 
+	const taskCard = document.querySelector("main");
+
 	document.getElementById("addtask").addEventListener("click", () => {
+		const taskList = document.querySelector(".tasklist");
+
+		if (taskList) {
+			taskList.remove();
+		}
+
 		const title = prompt("Enter todo title:");
 		if (title) {
 			const description = prompt("Enter todo description:");
@@ -37,7 +46,7 @@ export default function renderMain(container) {
 			const newTodo = new Todo(title, description, dueDate, priority);
 			currentProject.addTodo(newTodo);
 
-			renderTaskListCard(currentProject);
+			taskCard.appendChild(createTaskList(currentProject));
 			saveData(projects, currentProjectIndex);
 		}
 	});

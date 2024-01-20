@@ -1,26 +1,6 @@
-export default function renderTaskListCard(project) {
-	const taskListCard = document.createElement("main");
-	taskListCard.classList.add("card");
-
-	const topHeader = document.createElement("div");
-	topHeader.classList.add("topheader");
-
-	const header = document.createElement("h2");
-	header.textContent = "Your Tasks";
-
-	const addTaskButton = document.createElement("button");
-	addTaskButton.setAttribute("id", "addtask");
-	addTaskButton.textContent = "+";
-
-	topHeader.appendChild(header);
-	topHeader.appendChild(addTaskButton);
-
-	taskListCard.appendChild(topHeader);
-
-	const lineBreak = document.createElement("hr");
-	taskListCard.appendChild(lineBreak);
-
+export default function createTaskList(project) {
 	const taskList = document.createElement("ul");
+	taskList.classList.add("tasklist");
 
 	project.getTodos().forEach((todo) => {
 		const li = document.createElement("li");
@@ -73,7 +53,5 @@ export default function renderTaskListCard(project) {
 		taskList.appendChild(li);
 	});
 
-	taskListCard.appendChild(taskList);
-
-	return taskListCard;
+	return taskList;
 }
