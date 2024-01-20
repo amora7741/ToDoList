@@ -44,7 +44,7 @@ header {
 	border-radius: var(--rounded-corners);
 	gap: 15px;
 	box-shadow: var(--card-shadow);
-	min-width: 50vw;
+	width: 70vw;
 }
 
 main {
@@ -95,8 +95,8 @@ button:hover {
 	align-items: center;
 }
 
-.toptask h3,
-li p {
+.checktask,
+.todo-description {
 	overflow: auto;
 }
 
@@ -113,9 +113,23 @@ li p {
 
 #removetask {
 	background-color: rgb(255, 101, 101);
-	padding: 10px 20px;
 }
 
 #addtask {
 	font-size: 1.3rem;
+}
+
+@media (max-width: 578px) {
+	.task-buttoncontainer {
+		flex-direction: column;
+	}
+
+	main,
+	header {
+		font-size: 1rem;
+	}
+
+	button {
+		padding: 5px;
+	}
 }
