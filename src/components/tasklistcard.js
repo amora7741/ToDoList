@@ -1,6 +1,6 @@
 import createTaskList from "./tasklist.js";
 
-export default function renderTaskListCard(project) {
+export default function renderTaskListCard(project, saveDataCallback) {
 	const taskListCard = document.createElement("main");
 	taskListCard.classList.add("card");
 
@@ -22,7 +22,7 @@ export default function renderTaskListCard(project) {
 	const lineBreak = document.createElement("hr");
 	taskListCard.appendChild(lineBreak);
 
-	taskListCard.appendChild(createTaskList(project));
+	taskListCard.appendChild(createTaskList(project, saveDataCallback));
 
 	return taskListCard;
 }

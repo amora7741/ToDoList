@@ -26,7 +26,11 @@ export default function renderMain(container) {
 	}
 
 	container.appendChild(renderHeader(currentProject));
-	container.appendChild(renderTaskListCard(currentProject));
+	container.appendChild(
+		renderTaskListCard(currentProject, () =>
+			saveData(projects, currentProjectIndex)
+		)
+	);
 
 	const taskCard = document.querySelector("main");
 
@@ -46,7 +50,11 @@ export default function renderMain(container) {
 			const newTodo = new Todo(title, description, dueDate, priority);
 			currentProject.addTodo(newTodo);
 
-			taskCard.appendChild(createTaskList(currentProject));
+			taskCard.appendChild(
+				createTaskList(currentProject, () =>
+					saveData(projects, currentProjectIndex)
+				)
+			);
 			saveData(projects, currentProjectIndex);
 		}
 	});

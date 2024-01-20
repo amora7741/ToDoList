@@ -1,4 +1,4 @@
-export default function createTaskList(project) {
+export default function createTaskList(project, saveDataCallback) {
 	const taskList = document.createElement("ul");
 	taskList.classList.add("tasklist");
 
@@ -18,12 +18,15 @@ export default function createTaskList(project) {
 			todo.completed = checkbox.checked;
 
 			text.style.textDecoration = todo.completed ? "line-through" : "none";
+			saveDataCallback();
 		});
 
 		container.appendChild(checkbox);
 
 		const text = document.createElement("h3");
 		text.textContent = `${todo.title} - Due: ${todo.dueDate} - Priority: ${todo.priority}`;
+
+		text.style.textDecoration = todo.completed ? "line-through" : "none";
 
 		container.appendChild(text);
 
