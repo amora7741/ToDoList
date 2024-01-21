@@ -3,6 +3,7 @@ import renderTaskListCard from "../components/tasklistcard.js";
 import Project from "../components/project.js";
 import Todo from "../components/todo.js";
 import createTaskList from "../components/tasklist.js";
+import renderModal from "../components/modal.js";
 
 export default function renderMain(container) {
 	const projectsData = JSON.parse(localStorage.getItem("projects")) || [];
@@ -35,9 +36,10 @@ export default function renderMain(container) {
 	const taskCard = document.querySelector("main");
 
 	document.getElementById("addtask").addEventListener("click", () => {
+		container.appendChild(renderModal());
 		const taskList = document.querySelector(".tasklist");
 
-		const title = prompt("Enter todo title:");
+		//const title = prompt("Enter todo title:");
 		if (title) {
 			if (taskList) {
 				taskList.remove();
