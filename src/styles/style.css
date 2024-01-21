@@ -151,6 +151,7 @@ button:hover {
 	background-color: #0a679383;
 	padding: 30px;
 	border-radius: 10px;
+	border: 1px solid #888;
 }
 
 form {
@@ -175,6 +176,8 @@ form button {
 	font-size: 1rem;
 	background-color: var(--form-contrast);
 	cursor: pointer;
+	color: black;
+	margin-top: 10px;
 }
 
 .close {

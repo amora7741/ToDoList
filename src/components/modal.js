@@ -66,6 +66,15 @@ export default function renderModal() {
 	todoForm.appendChild(priorityLabel);
 	todoForm.appendChild(prioritySelect);
 
+	const submitButton = document.createElement("button");
+	submitButton.setAttribute("id", "submit");
+	submitButton.textContent = "Submit";
+	submitButton.addEventListener("click", () => {
+		createTodo();
+	});
+
+	todoForm.appendChild(submitButton);
+
 	modalCard.appendChild(todoForm);
 
 	modalDisplay.appendChild(modalCard);
