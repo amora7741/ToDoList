@@ -1,6 +1,6 @@
 import Todo from "./todo";
 
-export default function renderModal() {
+export default function renderModal(todoAddedCallback) {
 	const modalDisplay = document.createElement("div");
 	modalDisplay.classList.add("modaldisplay");
 
@@ -71,7 +71,7 @@ export default function renderModal() {
 	submitButton.setAttribute("id", "submit");
 	submitButton.textContent = "Submit";
 	submitButton.addEventListener("click", () => {
-		createTodo();
+		createTodo(todoAddedCallback);
 	});
 
 	todoForm.appendChild(submitButton);
@@ -83,7 +83,7 @@ export default function renderModal() {
 	return modalDisplay;
 }
 
-function createTodo() {
+function createTodo(todoAddedCallback) {
 	const title = document.querySelector("#title").value;
 	const description = document.querySelector("#description").value;
 	const dueDate = document.querySelector("#duedate").value;
@@ -93,6 +93,8 @@ function createTodo() {
 
 	const newTodo = new Todo(title, description, dueDate, priority);
 	console.log(newTodo);
+
+	todoAddedCallback(newTodo);
 }
 
 function closeModal() {
