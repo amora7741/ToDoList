@@ -162,7 +162,8 @@ form {
 }
 
 form input,
-select {
+form select,
+form textarea {
 	border: none;
 	padding: 5px;
 	border-radius: var(--rounded-corners);

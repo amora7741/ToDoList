@@ -24,6 +24,7 @@ export default function renderModal(todoAddedCallback) {
 	const titleInput = document.createElement("input");
 	titleInput.setAttribute("type", "text");
 	titleInput.setAttribute("id", "title");
+	titleInput.required = true;
 
 	todoForm.appendChild(titleLabel);
 	todoForm.appendChild(titleInput);
@@ -31,9 +32,9 @@ export default function renderModal(todoAddedCallback) {
 	const descriptionLabel = document.createElement("label");
 	descriptionLabel.setAttribute("for", "description");
 	descriptionLabel.textContent = "Description:";
-	const descriptionInput = document.createElement("input");
-	descriptionInput.setAttribute("type", "text");
+	const descriptionInput = document.createElement("textarea");
 	descriptionInput.setAttribute("id", "description");
+	descriptionInput.required = true;
 
 	todoForm.appendChild(descriptionLabel);
 	todoForm.appendChild(descriptionInput);
@@ -44,6 +45,7 @@ export default function renderModal(todoAddedCallback) {
 	const dueDateInput = document.createElement("input");
 	dueDateInput.setAttribute("type", "date");
 	dueDateInput.setAttribute("id", "duedate");
+	dueDateInput.required = true;
 
 	todoForm.appendChild(dueDateLabel);
 	todoForm.appendChild(dueDateInput);
@@ -67,11 +69,15 @@ export default function renderModal(todoAddedCallback) {
 	todoForm.appendChild(prioritySelect);
 
 	const submitButton = document.createElement("button");
-	submitButton.setAttribute("type", "button");
+	submitButton.setAttribute("type", "submit");
 	submitButton.setAttribute("id", "submit");
 	submitButton.textContent = "Submit";
-	submitButton.addEventListener("click", () => {
-		createTodo(todoAddedCallback);
+	submitButton.addEventListener("click", (e) => {
+		const form = todoForm;
+		if (form.checkValidity()) {
+			e.preventDefault();
+			createTodo(todoAddedCallback);
+		}
 	});
 
 	todoForm.appendChild(submitButton);
