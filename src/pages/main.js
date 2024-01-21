@@ -39,26 +39,19 @@ export default function renderMain(container) {
 		container.appendChild(renderModal());
 		const taskList = document.querySelector(".tasklist");
 
-		//const title = prompt("Enter todo title:");
-		if (title) {
-			if (taskList) {
-				taskList.remove();
-			}
-
-			const description = prompt("Enter todo description:");
-			const dueDate = prompt("Enter due date (optional):");
-			const priority = prompt("Enter priority (Low/Medium/High):");
-
-			const newTodo = new Todo(title, description, dueDate, priority);
-			currentProject.addTodo(newTodo);
-
-			taskCard.appendChild(
-				createTaskList(currentProject, () =>
-					saveData(projects, currentProjectIndex)
-				)
-			);
-			saveData(projects, currentProjectIndex);
+		if (taskList) {
+			taskList.remove();
 		}
+
+		// const newTodo = new Todo(title, description, dueDate, priority);
+		// currentProject.addTodo(newTodo);
+
+		// taskCard.appendChild(
+		// 	createTaskList(currentProject, () =>
+		// 		saveData(projects, currentProjectIndex)
+		// 	)
+		// );
+		// saveData(projects, currentProjectIndex);
 	});
 }
 
