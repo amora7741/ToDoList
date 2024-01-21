@@ -67,6 +67,7 @@ export default function renderModal() {
 	todoForm.appendChild(prioritySelect);
 
 	const submitButton = document.createElement("button");
+	submitButton.setAttribute("type", "button");
 	submitButton.setAttribute("id", "submit");
 	submitButton.textContent = "Submit";
 	submitButton.addEventListener("click", () => {
@@ -90,7 +91,8 @@ function createTodo() {
 
 	closeModal();
 
-	return new Todo(title, description, dueDate, priority);
+	const newTodo = new Todo(title, description, dueDate, priority);
+	console.log(newTodo);
 }
 
 function closeModal() {
