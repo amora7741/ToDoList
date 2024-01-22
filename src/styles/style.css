@@ -186,3 +186,9 @@ form button {
 	font-size: 30px;
 	cursor: pointer;
 }
+
+select {
+	padding: 5px;
+	border: none;
+	border-radius: var(--rounded-corners);
+}
