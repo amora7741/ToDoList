@@ -1,194 +1,194 @@
-@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 
 :root {
-	--blue-400: #60a5fa;
-	--blue-700: #1d4ed8;
-	--rounded-corners: 10px;
-	--gray-300: #d1d5db;
-	--card-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	--button-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
-		rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
-	--form-contrast: rgb(201, 201, 201);
+  --blue-400: #60a5fa;
+  --blue-700: #1d4ed8;
+  --rounded-corners: 10px;
+  --gray-300: #d1d5db;
+  --card-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --button-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  --form-contrast: rgb(201, 201, 201);
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: "Agbalumo";
-	background-color: var(--gray-300);
-	padding: 30px;
+  font-family: 'Agbalumo';
+  background-color: var(--gray-300);
+  padding: 30px;
 }
 
 .container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
 }
 
 header {
-	align-items: center;
-	background-color: var(--blue-400);
-	color: white;
-	font-size: 1.7rem;
-	padding: 30px;
+  align-items: center;
+  background-color: var(--blue-400);
+  color: white;
+  font-size: 1.7rem;
+  padding: 30px;
 }
 
 .card {
-	display: flex;
-	flex-direction: column;
-	border-radius: var(--rounded-corners);
-	gap: 15px;
-	box-shadow: var(--card-shadow);
-	width: 70vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rounded-corners);
+  gap: 15px;
+  box-shadow: var(--card-shadow);
+  width: 70vw;
 }
 
 main {
-	background-color: white;
-	color: black;
-	font-size: 1.5rem;
-	padding: 30px;
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  padding: 30px;
 }
 
 .topheader {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 li {
-	display: flex;
-	border-bottom: 1px dotted black;
-	padding: 15px 0px;
-	flex-direction: column;
+  display: flex;
+  border-bottom: 1px dotted black;
+  padding: 15px 0px;
+  flex-direction: column;
 }
 
 button {
-	padding: 15px 30px;
-	border: none;
-	border-radius: var(--rounded-corners);
-	background-color: var(--blue-400);
-	color: white;
-	font-weight: bold;
-	box-shadow: var(--button-shadow);
-	font-size: 1rem;
-	cursor: pointer;
+  padding: 15px 30px;
+  border: none;
+  border-radius: var(--rounded-corners);
+  background-color: var(--blue-400);
+  color: white;
+  font-weight: bold;
+  box-shadow: var(--button-shadow);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 button:hover {
-	background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+  background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
 }
 
 .toptask {
-	display: flex;
-	justify-content: space-between;
-	gap: 30px;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
 }
 
 .checktask,
 .todo-description {
-	overflow: auto;
+  overflow: auto;
 }
 
 .checktask {
-	display: flex;
-	gap: 10px;
-	align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .task-buttoncontainer {
-	display: flex;
-	gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 #removetask {
-	background-color: rgb(255, 101, 101);
+  background-color: rgb(255, 101, 101);
 }
 
 #addtask {
-	font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 @media (max-width: 578px) {
-	.task-buttoncontainer {
-		flex-direction: column;
-	}
+  .task-buttoncontainer {
+    flex-direction: column;
+  }
 
-	main,
-	header {
-		font-size: 1rem;
-	}
+  main,
+  header {
+    font-size: 1rem;
+  }
 
-	button {
-		padding: 5px;
-	}
+  button {
+    padding: 5px;
+  }
 }
 
 .modaldisplay {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modalcard {
-	background-color: #0a679383;
-	padding: 30px;
-	border-radius: 10px;
-	border: 1px solid #888;
+  background-color: #0a679383;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #888;
 }
 
 form {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	color: var(--form-contrast);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--form-contrast);
 }
 
 form input,
 form select,
 form textarea {
-	border: none;
-	padding: 5px;
-	border-radius: var(--rounded-corners);
-	background-color: var(--form-contrast);
+  border: none;
+  padding: 5px;
+  border-radius: var(--rounded-corners);
+  background-color: var(--form-contrast);
 }
 
 form button {
-	border: none;
-	border-radius: var(--rounded-corners);
-	padding: 5px;
-	font-size: 1rem;
-	background-color: var(--form-contrast);
-	cursor: pointer;
-	color: black;
-	margin-top: 10px;
+  border: none;
+  border-radius: var(--rounded-corners);
+  padding: 5px;
+  font-size: 1rem;
+  background-color: var(--form-contrast);
+  cursor: pointer;
+  color: black;
+  margin-top: 10px;
 }
 
 .close {
-	align-self: flex-end;
-	font-size: 30px;
-	cursor: pointer;
+  align-self: flex-end;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 select {
-	padding: 5px;
-	border: none;
-	border-radius: var(--rounded-corners);
+  padding: 5px;
+  border: none;
+  border-radius: var(--rounded-corners);
 }

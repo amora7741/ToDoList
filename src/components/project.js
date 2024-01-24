@@ -1,14 +1,14 @@
 export default class Project {
-	constructor(name) {
-		this.name = name;
-		this.tasks = [];
-	}
+  constructor(name) {
+    this.name = name;
+    this.tasks = [];
+  }
 
-	addTodo(todo) {
-		this.tasks.push(todo);
-	}
+  addTodo(todo) {
+    this.tasks.push(todo);
+  }
 
-	getTodos() {
-		return this.tasks;
-	}
+  getTodos() {
+    return this.tasks;
+  }
 }
